@@ -1,0 +1,114 @@
+:root{
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-dark: #1e40af;
+  --tag-bg: #eef2ff;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); color: #111827; }
+
+.app-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
+  padding: 48px 16px;
+}
+
+/* container that holds the app content */
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,252,0.95));
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(16,24,40,0.12);
+  padding: 32px;
+  margin: 0 auto;
+}
+
+/* header */
+.app-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom: 18px;
+  justify-content: center;
+  text-align: center;
+}
+.app-header h1 { margin:0; font-size:1.8rem; font-weight:700; }
+
+/* button */
+.btn {
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:8px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  font-weight:600;
+  box-shadow: 0 6px 14px rgba(37,99,235,0.15);
+}
+.btn.secondary {
+  background: white;
+  color: var(--accent);
+  border: 1px solid rgba(37,99,235,0.12);
+  box-shadow:none;
+}
+
+/* tag buttons */
+.tag-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin: 10px 0 18px; }
+.tag-btn {
+  padding:6px 10px;
+  border-radius:999px;
+  border: none;
+  cursor:pointer;
+  background: var(--tag-bg);
+  color: #3730a3;
+  font-weight:600;
+}
+.tag-btn.active { background: var(--accent); color: white; }
+
+/* notes grid */
+.notes-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap:16px;
+  margin-top: 12px;
+}
+
+/* note card */
+.note-card {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+  border: 1px solid rgba(15,23,42,0.03);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height: 120px;
+}
+.note-card h3 { margin:0; font-size:1.05rem; }
+.note-body { margin:0; color:var(--muted); white-space:pre-wrap; flex:1; }
+
+/* tags in card */
+.note-card .tags { display:flex; gap:8px; flex-wrap:wrap; }
+.note-card .tag-pill {
+  background: #f3f4f6;
+  color: #374151;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+/* action row */
+.actions { display:flex; gap:8px; justify-content:flex-end; }
+.action-small { padding:6px 8px; border-radius:8px; border:1px solid #e6edf9; background:white; cursor:pointer; font-weight:600; }
+
+/* empty state */
+.empty { text-align:center; color:var(--muted); padding:24px 0; }
